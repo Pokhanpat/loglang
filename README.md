@@ -12,14 +12,14 @@ Once a circuit file has been created, it can be accessed in another file using a
 where "name" is the name of the circuit being called, "output" indicates which output bit of the circuit is desired (0 means the first, 1 means the second, etc.), and input1,input2,... are the inputs being given to the circuit (the number depends on how many the circuit takes).
 
 Example Circuit Files:
-and:x,y
+and:x,y\n
 (x,y),(x,y)
 
-xor:x,y
+xor:x,y\n
 (x,(x,y)),(y,(x,y))
 
-half_adder:x,y
-[xor,0,x,y]
+half_adder:x,y\n
+[xor,0,x,y]\n
 [and,0,x,y]
 
 Compiling a Logic Circuit is done with the "im.java" program. Open a command window in the directory of im.java (make sure interp.java is also in the same directory), and use the command "java im.java dir" where "dir" is replaced with the relative path of the directory containing the files you wish to compile. Upon compilation, a folder will be created in "dir" called "compiled", containing the compiled files corresponding to each logic circuit in "dir". These compiled files can be used in future java programs by referecing the name.funci method, where "name" is replaced with the name of the circuit and "i" is replaced with the specific output bit desired. The inputs are booleans corresponding to the binary inputs of the circuit, and the output will be a boolean corresponding to the output of the circuit's logic.
